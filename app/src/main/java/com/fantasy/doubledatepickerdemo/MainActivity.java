@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.fantasy.doubledatepicker.DoubleDateSelectDialog;
 
@@ -14,12 +15,23 @@ import com.fantasy.doubledatepicker.DoubleDateSelectDialog;
 public class MainActivity extends AppCompatActivity {
     private Button mShowDatePickBtn;
     private DoubleDateSelectDialog mDoubleTimeSelectDialog;
+    private TextView allowedSmallestTimeText, allowedBiggestTimeText, defaultChooseDateText;
+    private String allowedSmallestTime, allowedBiggestTime, defaultChooseDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mShowDatePickBtn = findViewById(R.id.show_date_pick_btn);
+        allowedSmallestTimeText = findViewById(R.id.allowedSmallestTimeText);
+        allowedBiggestTimeText = findViewById(R.id.allowedBiggestTimeText);
+        defaultChooseDateText = findViewById(R.id.defaultChooseDateText);
+        allowedSmallestTime = "2017-11-12";
+        allowedBiggestTime = "2018-02-11";
+        defaultChooseDate = "2018-01-18";
+        allowedSmallestTimeText.setText("起始日期: "+allowedSmallestTime);
+        allowedBiggestTimeText.setText("结束日期: "+allowedBiggestTime);
+        defaultChooseDateText.setText("默认选中日期: "+defaultChooseDate);
         mShowDatePickBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,11 +41,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showCustomTimePicker() {
-        String allowedSmallestTime = "2017-11-12";
-        String allowedBiggestTime = "2018-02-11";
-        String defaultChooseDate = "2018-01-18";
+
         if (mDoubleTimeSelectDialog == null) {
-            mDoubleTimeSelectDialog = new DoubleDateSelectDialog(this,allowedSmallestTime,allowedBiggestTime,defaultChooseDate);
+            mDoubleTimeSelectDialog = new DoubleDateSelectDialog(this, allowedSmallestTime, allowedBiggestTime, defaultChooseDate);
             mDoubleTimeSelectDialog.setOnDateSelectFinished(new DoubleDateSelectDialog.OnDateSelectFinished() {
                 @Override
                 public void onSelectFinished(String startTime, String endTime) {

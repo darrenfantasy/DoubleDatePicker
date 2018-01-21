@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context="com.fantasy.doubledatepickerdemo.MainActivity">
 
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/allowedSmallestTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black99" />
+
+        <TextView
+            android:id="@+id/allowedBiggestTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black99" />
+
+        <TextView
+            android:id="@+id/defaultChooseDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black99" />
+
+        <Button
+            android:id="@+id/show_date_pick_btn"
+            style="@style/btn_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义时间 开始时间到结束时间" />
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,10 +48,4 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
-        android:id="@+id/show_date_pick_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_common"
-        android:text="自定义时间 开始时间到结束时间"/>
 </android.support.constraint.ConstraintLayout>
