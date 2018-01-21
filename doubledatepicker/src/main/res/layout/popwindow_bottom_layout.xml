@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:paddingLeft="40dp"
-            android:text="结束于\n2017.05.08" />
+            android:text="结束于\n2018.01.18" />
 
         <TextView
             android:id="@+id/tv_tclEndTime"
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:paddingLeft="40dp"
-            android:text="结束于\n2017.05.08" />
+            android:text="结束于\n2018.01.18" />
 
     </LinearLayout>
 
