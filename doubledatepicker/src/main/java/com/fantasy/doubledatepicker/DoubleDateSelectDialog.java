@@ -175,6 +175,13 @@ public class DoubleDateSelectDialog extends Dialog implements View.OnClickListen
         mEndTimeTv.setText(makeFormatContent(mContext.getString(R.string.end_at), yearS + "." + monthS + "." + dayS));
     }
 
+    /**
+     *
+     * @param context
+     * @param allowedSmallestDate 日期选择器的起始日期
+     * @param allowedBiggestDate 日期选择器的终止日期
+     * @param defaultChooseDate 日期选择器默认选择日期
+     */
     public DoubleDateSelectDialog(Context context, String allowedSmallestDate, String allowedBiggestDate, String defaultChooseDate) {
         super(context, R.style.PopBottomDialogStyle);
         this.mContext = context;
