@@ -29,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showCustomTimePicker() {
-        String beginDeadTime = "2017-01-01";
+        String allowedSmallestTime = "2017-11-12";
+        String allowedBiggestTime = "2018-02-11";
+        String defaultChooseDate = "2018-01-18";
         if (mDoubleTimeSelectDialog == null) {
-            mDoubleTimeSelectDialog = new DoubleDateSelectDialog(this, beginDeadTime, "", "");
+            mDoubleTimeSelectDialog = new DoubleDateSelectDialog(this,allowedSmallestTime,allowedBiggestTime,defaultChooseDate);
             mDoubleTimeSelectDialog.setOnDateSelectFinished(new DoubleDateSelectDialog.OnDateSelectFinished() {
                 @Override
                 public void onSelectFinished(String startTime, String endTime) {
@@ -47,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         if (!mDoubleTimeSelectDialog.isShowing()) {
-            mDoubleTimeSelectDialog.recoverButtonState();
             mDoubleTimeSelectDialog.show();
         }
     }
