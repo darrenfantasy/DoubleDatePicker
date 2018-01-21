@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.fantasy.doubledatepicker", appContext.getPackageName());
+        assertEquals("com.fantasy.doubledatepicker.test", appContext.getPackageName());
     }
 }

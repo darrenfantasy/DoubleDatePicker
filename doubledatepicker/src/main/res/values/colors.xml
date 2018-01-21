@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--wheel 的颜色值-->
+    <color name="whell_item_bg_select">#efefef</color>
+    <color name="black33">#333333</color>
+    <color name="blue_bg">#45a2ff</color>
+    <color name="withe">#ffffff</color>
+    <color name="black99">#999999</color>
+    <color name="blueLight">#7eb3ff</color>
+
+</resources>

@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -212,36 +211,35 @@ private String allowedBiggestTime;
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_tclBeginTime:
-                mTimeType = TIME_TYPE.TYPE_START;
-                init(mSelectStartTime, false);
-                mTimeContainerLl.setBackgroundResource(R.mipmap.begin_time_bg);
-                break;
-            case R.id.tv_tclEndTime:
-                mTimeType = TIME_TYPE.TYPE_END;
-                init(mSelectEndTime, false);
-                mTimeContainerLl.setBackgroundResource(R.mipmap.end_time_bg);
-                break;
-            case R.id.tv_tclCancel:
-                this.dismiss();
+        int i = v.getId();
+        if (i == R.id.tv_tclBeginTime) {
+            mTimeType = TIME_TYPE.TYPE_START;
+            init(mSelectStartTime, false);
+            mTimeContainerLl.setBackgroundResource(R.mipmap.begin_time_bg);
 
-                break;
-            case R.id.tv_tclOk:
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
-                try {
-                    if (sdf.parse(mSelectStartTime).getTime() > sdf.parse(mSelectEndTime).getTime()) {
-                        Toast.makeText(mContext, R.string.time_start_larger_end_not_allowed, Toast.LENGTH_SHORT).show();
-                    } else {
-                        if (onDateSelectFinished != null) {
-                            onDateSelectFinished.onSelectFinished(mSelectStartTime, mSelectEndTime);
-                        }
-                        this.dismiss();
+        } else if (i == R.id.tv_tclEndTime) {
+            mTimeType = TIME_TYPE.TYPE_END;
+            init(mSelectEndTime, false);
+            mTimeContainerLl.setBackgroundResource(R.mipmap.end_time_bg);
+
+        } else if (i == R.id.tv_tclCancel) {
+            this.dismiss();
+
+
+        } else if (i == R.id.tv_tclOk) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+            try {
+                if (sdf.parse(mSelectStartTime).getTime() > sdf.parse(mSelectEndTime).getTime()) {
+                    Toast.makeText(mContext, R.string.time_start_larger_end_not_allowed, Toast.LENGTH_SHORT).show();
+                } else {
+                    if (onDateSelectFinished != null) {
+                        onDateSelectFinished.onSelectFinished(mSelectStartTime, mSelectEndTime);
                     }
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                    this.dismiss();
                 }
-
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     }
 

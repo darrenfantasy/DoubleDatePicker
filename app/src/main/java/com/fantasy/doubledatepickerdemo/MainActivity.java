@@ -1,10 +1,12 @@
-package com.fantasy.doubledatepicker;
+package com.fantasy.doubledatepickerdemo;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.fantasy.doubledatepicker.DoubleDateSelectDialog;
 
 /**
  * Created by darrenfantasy on 2018/01/20.
